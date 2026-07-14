@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spring Boot Interview Q&A — 2 Years Experience</title>
+    <style>
+      :root {
+        --bg: #f6f8fb;
+        --card: #ffffff;
+        --accent: #2b6cb0;
+        --accent-soft: rgba(43, 108, 176, 0.12);
+        --muted: #6b7280;
+        --text: #111827;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
+        background: var(--bg);
+        margin: 0;
+        padding: 32px;
+        color: var(--text);
+      }
+      .container {
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      h1 {
+        margin: 0;
+        color: var(--accent);
+      }
+      .meta,
+      .lead {
+        color: var(--muted);
+      }
+      .lead {
+        margin: 8px 0 22px;
+      }
+      .controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      .btn,
+      button {
+        background: var(--accent);
+        color: #fff;
+        padding: 10px 14px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font: inherit;
+        transition: background 0.2s ease;
+      }
+      .btn:hover,
+      button:hover {
+        background: #1d4f8b;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .card {
+        background: var(--card);
+        border-radius: 16px;
+        padding: 22px;
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      }
+      .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        gap: 14px;
+        margin-bottom: 14px;
+      }
+      .section-title {
+        margin: 0;
+        color: #0f172a;
+        font-size: 1.18rem;
+      }
+      .section-actions {
+        display: flex;
+        gap: 8px;
+      }
+      details {
+        margin: 10px 0;
+        border-left: 3px solid transparent;
+        padding: 10px 14px;
+        border-radius: 11px;
+        background: #f8fafc;
+      }
+      details[open] {
+        border-left-color: var(--accent);
+        background: linear-gradient(90deg, rgba(43, 108, 176, 0.06), transparent);
+      }
+      summary {
+        font-weight: 600;
+        cursor: pointer;
+        list-style: none;
+      }
+      summary::-webkit-details-marker {
+        display: none;
+      }
+      summary::before {
+        content: '▸';
+        display: inline-block;
+        width: 1em;
+        transition: transform 0.2s ease;
+      }
+      details[open] summary::before {
+        transform: rotate(90deg);
+      }
+      .answer {
+        margin-top: 10px;
+        color: #1f2937;
+        line-height: 1.7;
+      }
+      code {
+        background: rgba(15, 23, 42, 0.06);
+        color: #111827;
+        padding: 2px 6px;
+        border-radius: 6px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      }
+      .section-meta {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      @media (min-width: 860px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="24" height="24" rx="6" fill="#2b6cb0" />
+          <path d="M7 8h10M7 12h10M7 16h7" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <div>
+          <h1>Spring Boot Interview Q&amp;A — 2 Years</h1>
+          <div class="meta">Expanded questions, answers, advanced topics, and section controls.</div>
+        </div>
+      </header>
+
+      <p class="lead">Click a question to show the answer. Use section controls to expand or collapse the entire set for each topic.</p>
+
+      <div class="controls">
+        <button type="button" id="expand-all">Expand all sections</button>
+        <button type="button" id="collapse-all">Collapse all sections</button>
+        <button type="button" id="print">Print / Save as PDF</button>
+      </div>
+
+      <div class="grid">
+        <section class="card" data-section="core">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Core Spring Boot</h2>
+              <div class="section-meta">Fundamental application concepts and bootstrapping.</div>
+            </div>
+            <div class="section-actions">
+              <button type="button" class="section-toggle" data-action="toggle">Expand all</button>
+            </div>
+          </div>
+
+          <details>
+            <summary>What is Spring Boot and why is it used?</summary>
+            <div class="answer">Spring Boot streamlines Spring application development by offering convention-over-configuration, embedded servers, and production-ready behavior. It reduces boilerplate and lets developers focus on implementing features instead of wiring dependencies.</div>
+          </details>
+
+          <details>
+            <summary>Explain the difference between Spring Boot and the Spring Framework.</summary>
+            <div class="answer">Spring Framework provides core concepts like dependency injection, AOP, and MVC. Spring Boot sits on top of Spring and adds opinionated auto-configuration, starters, and simplified packaging to help developers start quickly.</div>
+          </details>
+
+          <details>
+            <summary>How does auto-configuration work in Spring Boot?</summary>
+            <div class="answer">Spring Boot scans the classpath and uses `@Conditional` annotations to activate configuration only when certain libraries are present and beans are missing. This makes it possible to get default beans without explicit configuration.</div>
+          </details>
+
+          <details>
+            <summary>What are Spring Boot starters?</summary>
+            <div class="answer">Starters are dependency bundles such as `spring-boot-starter-web` or `spring-boot-starter-data-jpa` that include common related libraries. They simplify dependency management and ensure compatible versions.</div>
+          </details>
+
+          <details>
+            <summary>How do you bootstrap a Spring Boot project?</summary>
+            <div class="answer">Use Spring Initializr, or create a Maven/Gradle project with `spring-boot-starter-parent`, add `spring-boot-starter` dependencies, and create an `@SpringBootApplication` class with a `main()` method calling `SpringApplication.run()`.</div>
+          </details>
+
+          <details>
+            <summary>How do you exclude specific auto-configurations?</summary>
+            <div class="answer">Use `@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})` or `spring.autoconfigure.exclude` in properties. This is useful when you want to customize or disable a default auto-configuration bean.</div>
+          </details>
+
+          <details>
+            <summary>What is the role of `SpringApplication` and `ApplicationContext`?</summary>
+            <div class="answer">`SpringApplication` starts the application, loads the context, and handles environment setup. `ApplicationContext` is the container that holds beans, manages lifecycle, and processes dependency injection.</div>
+          </details>
+        </section>
+
+        <section class="card" data-section="config">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Configuration &amp; Properties</h2>
+              <div class="section-meta">Property binding, profiles, external config, and environment order.</div>
+            </div>
+            <div class="section-actions">
+              <button type="button" class="section-toggle" data-action="toggle">Expand all</button>
+            </div>
+          </div>
+
+          <details>
+            <summary>How do you externalize configuration?</summary>
+            <div class="answer">Externalize configuration through `application.properties`, YAML, environment variables, command-line arguments, or Spring Cloud Config. Spring Boot merges these sources and follows a consistent order when resolving values.</div>
+          </details>
+
+          <details>
+            <summary>How do Spring profiles work?</summary>
+            <div class="answer">Profiles allow you to group beans and configuration for specific environments. Activate profiles with `spring.profiles.active`, and create profile-specific files like `application-dev.yml` or annotate beans with `@Profile("prod")`.</div>
+          </details>
+
+          <details>
+            <summary>How do you bind properties to a POJO?</summary>
+            <div class="answer">Use `@ConfigurationProperties(prefix = "app")` and either `@EnableConfigurationProperties` in a configuration class or register the class as a component. Use `@ConstructorBinding` for immutable binding.</div>
+          </details>
+
+          <details>
+            <summary>When should you use `.properties` vs `.yml`?</summary>
+            <div class="answer">`application.properties` is great for simple flat configuration. `application.yml` is preferable for nested structures, lists, and better readability when configuration grows more complex.</div>
+          </details>
+
+          <details>
+            <summary>What is `spring.config.import`?</summary>
+            <div class="answer">`spring.config.import` lets you load configuration from imported sources such as files, optional locations, or remote config servers. It supports use cases like shared config and environment-specific overrides.</div>
+          </details>
+
+          <details>
+            <summary>How is property resolution ordered?</summary>
+            <div class="answer">Spring Boot resolves properties in a predefined order: command-line args, environment variables, application properties/YAML, profile-specific files, and defaults. Later sources override earlier ones.</div>
+          </details>
+        </section>
+
+        <section class="card" data-section="di">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Dependency Injection &amp; Beans</h2>
+              <div class="section-meta">Bean lifecycle, injection patterns, scope, and advanced wiring.</div>
+            </div>
+            <div class="section-actions">
+              <button type="button" class="section-toggle" data-action="toggle">Expand all</button>
+            </div>
+          </div>
+
+          <details>
+            <summary>What are `@Component`, `@Service`, and `@Repository`?</summary>
+            <div class="answer">All mark classes as Spring-managed beans. `@Service` indicates service-layer logic, `@Repository` indicates data access and enables exception translation, and `@Component` is a generic stereotype for any bean.</div>
+          </details>
+
+          <details>
+            <summary>Why prefer constructor injection?</summary>
+            <div class="answer">Constructor injection makes dependencies explicit, supports immutability, and is easier to test. It also works cleanly with `final` fields and avoids the pitfalls of field injection.</div>
+          </details>
+
+          <details>
+            <summary>How do you create a custom bean?</summary>
+            <div class="answer">Declare a `@Configuration` class and expose a bean with `@Bean`. Use conditional annotations like `@ConditionalOnMissingBean` when you want Spring to use your custom bean only if no other bean exists.</div>
+          </details>
+
+          <details>
+            <summary>How do qualifiers and `@Primary` work?</summary>
+            <div class="answer">Use `@Qualifier("name")` to disambiguate multiple beans of the same type. `@Primary` marks one bean as the default when no explicit qualifier is provided.</div>
+          </details>
+
+          <details>
+            <summary>What bean scopes are available?</summary>
+            <div class="answer">Common scopes are `singleton` (default), `prototype`, `request`, `session`, and `application`. In web apps, request and session scopes are useful, but they often require proxying with `@Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)`.</div>
+          </details>
+        </section>
+
+        <section class="card" data-section="web">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Web &amp; REST</h2>
+              <div class="section-meta">REST controllers, validation, error handling, and API best practices.</div>
+            </div>
+            <div class="section-actions">
+              <button type="button" class="section-toggle" data-action="toggle">Expand all</button>
+            </div>
+          </div>
+
+          <details>
+            <summary>How do you create REST controllers?</summary>
+            <div class="answer">Annotate a class with `@RestController` and map methods using `@GetMapping`, `@PostMapping`, etc. Return objects directly, and Spring will serialize them as JSON by default.</div>
+          </details>
+
+          <details>
+            <summary>How do you validate request payloads?</summary>
+            <div class="answer">Use validation annotations like `@NotNull`, `@Email`, and `@Size` on DTO fields, then annotate the controller parameter with `@Valid`. Handle failures via `@ControllerAdvice` for user-friendly error responses.</div>
+          </details>
+
+          <details>
+            <summary>How do you handle exceptions globally?</summary>
+            <div class="answer">Use `@ControllerAdvice` and `@ExceptionHandler` to centralize exception handling. This ensures consistent HTTP status codes and response bodies for errors across controllers.</div>
+          </details>
+
+          <details>
+            <summary>What is content negotiation?</summary>
+            <div class="answer">Content negotiation selects the response format based on the `Accept` header and configured message converters. JSON is the default, but XML and other formats can be added with additional converters.</div>
+          </details>
+
+          <details>
+            <summary>How do you implement pagination and sorting?</summary>
+            <div class="answer">Use Spring Data's `Pageable` parameter in repository methods and controller endpoints. Return `Page<T>` results and accept query params like `page`, `size`, and `sort`.</div>
+          </details>
+
+          <details>
+            <summary>What is `@RestControllerAdvice`?</summary>
+            <div class="answer">`@RestControllerAdvice` is a specialization of `@ControllerAdvice` that automatically adds `@ResponseBody` to exception handlers, making it ideal for REST APIs because it returns JSON error responses.</div>
+          </details>
+        </section>
+
+        <section class="card" data-section="data">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Data Access (JPA)</h2>
+              <div class="section-meta">Entity mapping, repository patterns, transactions, and query tuning.</div>
+            </div>
+            <div class="section-actions">
+              <button type="button" class="section-toggle" data-action="toggle">Expand all</button>
+            </div>
+          </div>
+
+          <details>
+            <summary>How do you integrate Spring Data JPA?</summary>
+            <div class="answer">Add `spring-boot-starter-data-jpa` and a JDBC driver, configure datasource settings, and define interfaces extending `JpaRepository`. Spring Boot auto-configures the `EntityManagerFactory` and data source by default.</div>
+          </details>
+
+          <details>
+            <summary>How do you write custom JPA queries?</summary>
+            <div class="answer">Define repository methods using naming conventions or annotate methods with `@Query` for JPQL/SQL. Use projections and DTO constructors to reduce data transfer when needed.</div>
+          </details>
+
+          <details>
+            <summary>What are common transaction pitfalls?</summary>
+            <div class="answer">Transactions only work on public methods called from outside the bean due to proxies. Checked exceptions don't trigger rollback by default, and long transactions can cause lock contention and poor performance.</div>
+          </details>
+
+          <details>
+            <summary>How do you test JPA with an in-memory database?</summary>
+            <div class="answer">Use `@DataJpaTest` with H2 or another in-memory database. Spring Boot configures the test slice and rolls back transactions after each test to keep the database clean.</div>
+          </details>
+
+          <details>
+            <summary>What is the N+1 select problem?</summary>
+            <div class="answer">The N+1 problem occurs when fetching a collection triggers additional queries for each item. Fix it with `fetch = FetchType.LAZY` and `@EntityGraph` or `join fetch` queries to load needed associations efficiently.</div>
+          </details>
+
+          <details>
+            <summary>How can you optimize batch inserts?</summary>
+            <div class="answer">Enable JDBC batch inserts and tune `hibernate.jdbc.batch_size`. Use `flush()` and `clear()` periodically during large imports to avoid memory pressure.</div>
+          </details>
+        </section>
+
+        <section class="card" data-section="testing">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Testing</h2>
+              <div class="section-meta">Unit, integration, slice tests, and Spring test utilities.</div>
+            </div>
+            <div class="section-actions">
+              <button type="button" class="section-toggle" data-action="toggle">Expand all</button>
+            </div>
+          </div>
+
+          <details>
+            <summary>How do you unit test Spring components?</summary>
+            <div class="answer">Use JUnit and Mockito for unit tests. For example, mock service dependencies and test behaviour in isolation without loading the full Spring context.</div>
+          </details>
+
+          <details>
+            <summary>When should you use `@SpringBootTest`?</summary>
+            <div class="answer">Use `@SpringBootTest` for full integration tests when you need the entire Spring context. Since it is slower, use it for end-to-end scenarios rather than unit testing.</div>
+          </details>
+
+          <details>
+            <summary>How do you test controllers in isolation?</summary>
+            <div class="answer">Use `@WebMvcTest` and `MockMvc` to test the controller layer without loading the full application. Mock service dependencies with `@MockBean`.</div>
+          </details>
+
+          <details>
+            <summary>How do you test repositories in isolation?</summary>
+            <div class="answer">Use `@DataJpaTest` to load only JPA-related components and a lightweight database. This ensures repository behavior is verified without unrelated beans.</div>
+          </details>
+
+          <details>
+            <summary>What are test slices?</summary>
+            <div class="answer">Test slices like `@WebMvcTest`, `@DataJpaTest`, or `@JsonTest` load only a portion of the application context to make tests faster and more focused.</div>
+          </details>
+        </section>
+
+        <section class="card" data-section="security">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Security &amp; Auth</h2>
+              <div class="section-meta">Authentication, authorization, JWT, and advanced access controls.</div>
+            </div>
+            <div class="section-actions">
+              <button type="button" class="section-toggle" data-action="toggle">Expand all</button>
+            </div>
+          </div>
+
+          <details>
+            <summary>How do you secure a Spring Boot application?</summary>
+            <div class="answer">Add `spring-boot-starter-security`. Define a `SecurityFilterChain` bean or extend a security configuration class, set up authentication providers, and protect URLs with authorization rules.</div>
+          </details>
+
+          <details>
+            <summary>How does JWT authentication work?</summary>
+            <div class="answer">Authenticate users once, issue a signed JWT, and validate it for each subsequent request. The JWT contains claims and may be verified using a secret or public key.</div>
+          </details>
+
+          <details>
+            <summary>What is method-level security?</summary>
+            <div class="answer">Use `@EnableMethodSecurity` and annotations like `@PreAuthorize`, `@PostAuthorize`, or `@Secured` to protect service methods based on roles or expressions.</div>
+          </details>
+
+          <details>
+            <summary>How do you secure actuator endpoints?</summary>
+            <div class="answer">Use `management.endpoints.web.exposure.include` to limit endpoints, configure endpoint security in `application.properties`, and apply HTTP basic or OAuth protection to sensitive endpoints.</div>
+          </details>
+
+          <details>
+            <summary>What is OAuth2 resource server support?</summary>
+            <div class="answer">Spring Security can act as an OAuth2 resource server, validating JWT tokens issued by an authorization server and applying scopes or roles to secure endpoints.</div>
+          </details>
+        </section>
+
+        <section class="card" data-section="actuator">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Actuator, Monitoring &amp; Observability</h2>
+              <div class="section-meta">Health, metrics, tracing, and production visibility.</div>
+            </div>
+            <div class="section-actions">
+              <button type="button" class="section-toggle" data-action="toggle">Expand all</button>
+            </div>
+          </div>
+
+          <details>
+            <summary>What is Spring Boot Actuator?</summary>
+            <div class="answer">Actuator exposes built-in endpoints for health, metrics, environment, and application information. It is a production-ready feature set for monitoring and management.</div>
+          </details>
+
+          <details>
+            <summary>How do you add metrics and tracing?</summary>
+            <div class="answer">Add Micrometer to collect metrics, and configure a backend like Prometheus/Grafana. For tracing, use Spring Cloud Sleuth or OpenTelemetry to capture request traces and export them to Jaeger or Zipkin.</div>
+          </details>
+
+          <details>
+            <summary>How do you create custom Actuator endpoints?</summary>
+            <div class="answer">Implement a custom endpoint using `@Endpoint` and expose operations with `@ReadOperation`, `@WriteOperation`, or `@DeleteOperation`. Register it in the application context.</div>
+          </details>
+
+          <details>
+            <summary>How do you secure Actuator endpoints?</summary>
+            <div class="answer">Restrict exposure using `management.endpoints.web.exposure.include` and enable endpoint security using Spring Security. Expose only required endpoints in production.</div>
+          </details>
+
+          <details>
+            <summary>What are health groups?</summary>
+            <div class="answer">Health groups let you aggregate specific health indicators into named groups, so you can expose a subset of services like readiness and liveness separately.</div>
+          </details>
+        </section>
+
+        <section class="card" data-section="cloud">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Microservices &amp; Spring Cloud</h2>
+              <div class="section-meta">Distributed architecture, service discovery, config, and resilience.</div>
+            </div>
+            <div class="section-actions">
+              <button type="button" class="section-toggle" data-action="toggle">Expand all</button>
+            </div>
+          </div>
+
+          <details>
+            <summary>How does Spring Boot fit into microservices?</summary>
+            <div class="answer">Spring Boot makes services self-contained and easy to package. Spring Cloud then adds distributed features like config servers, discovery, load balancing, and distributed tracing.</div>
+          </details>
+
+          <details>
+            <summary>What is Spring Cloud Config?</summary>
+            <div class="answer">Spring Cloud Config provides centralized external configuration, often backed by Git. It allows services to pull config dynamically and manage environment-specific values consistently.</div>
+          </details>
+
+          <details>
+            <summary>How does service discovery work?</summary>
+            <div class="answer">Service discovery registers instances with a registry like Eureka or Consul. Clients then resolve service names instead of hard-coded addresses, enabling dynamic scaling and resilient routing.</div>
+          </details>
+
+          <details>
+            <summary>What is client-side load balancing?</summary>
+            <div class="answer">Client-side load balancing sends requests to different service instances from the client, typically using a library like Spring Cloud LoadBalancer. It enables retry and weighted routing without a separate load balancer.</div>
+          </details>
+
+          <details>
+            <summary>How does distributed tracing help?</summary>
+            <div class="answer">Distributed tracing tracks requests through multiple services, helping you identify latency hotspots and failures. It typically uses headers propagated through service calls and visualizes spans in tools like Jaeger.</div>
+          </details>
+        </section>
+
+        <section class="card" data-section="messaging">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Messaging &amp; Integration</h2>
+              <div class="section-meta">Event-driven design, messaging reliability, and integration patterns.</div>
+            </div>
+            <div class="section-actions">
+              <button type="button" class="section-toggle" data-action="toggle">Expand all</button>
+            </div>
+          </div>
+
+          <details>
+            <summary>How do you integrate Kafka or RabbitMQ?</summary>
+            <div class="answer">Use Spring for Apache Kafka or Spring AMQP. Define listeners with `@KafkaListener` or `@RabbitListener`, configure templates for sending messages, and manage topics or queues in application properties.</div>
+          </details>
+
+          <details>
+            <summary>How do you build reliable message processing?</summary>
+            <div class="answer">Implement acknowledgements, retries with backoff, dead-letter queues, and idempotent consumers. Consider transaction support where the broker and application both need consistency.</div>
+          </details>
+
+          <details>
+            <summary>What is the difference between pub/sub and point-to-point?</summary>
+            <div class="answer">Pub/sub broadcasts messages to multiple subscribers, while point-to-point delivers each message to a single consumer. Choose based on whether multiple services should react to the same event or only one should process it.</div>
+          </details>
+
+          <details>
+            <summary>How do you ensure exactly-once semantics?</summary>
+            <div class="answer">Exactly-once processing is difficult. Use idempotent consumers, deduplication, transactional producers/consumers, and broker features when available. Kafka transactions can help but require careful design.</div>
+          </details>
+        </section>
+
+        <section class="card" data-section="reactive">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Reactive &amp; WebFlux</h2>
+              <div class="section-meta">Reactive programming, non-blocking APIs, and advanced WebFlux patterns.</div>
+            </div>
+            <div class="section-actions">
+              <button type="button" class="section-toggle" data-action="toggle">Expand all</button>
+            </div>
+          </div>
+
+          <details>
+            <summary>When should you use WebFlux?</summary>
+            <div class="answer">Use WebFlux for highly concurrent, I/O-bound workloads where non-blocking behavior can improve scalability. It requires reactive libraries and is best suited for streaming or high-traffic endpoints.</div>
+          </details>
+
+          <details>
+            <summary>What are the differences between MVC and WebFlux?</summary>
+            <div class="answer">MVC is blocking and uses one thread per request. WebFlux is non-blocking and uses reactive streams (`Mono` and `Flux`) to handle asynchronous data flows with fewer threads.</div>
+          </details>
+
+          <details>
+            <summary>How do you use `WebClient`?</summary>
+            <div class="answer">`WebClient` is Spring's reactive HTTP client. Create a `WebClient`, invoke methods like `get()` or `post()`, and work with `Mono`/`Flux` responses for non-blocking integration with other services.</div>
+          </details>
+
+          <details>
+            <summary>What is backpressure?</summary>
+            <div class="answer">Backpressure allows a reactive consumer to control the rate at which a producer emits data. It prevents fast producers from overwhelming slower consumers and is fundamental to stable reactive streams.</div>
+          </details>
+        </section>
+
+        <section class="card" data-section="performance">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Performance, Troubleshooting &amp; Advanced</h2>
+              <div class="section-meta">Profiling, tuning, observability, and production hardening.</div>
+            </div>
+            <div class="section-actions">
+              <button type="button" class="section-toggle" data-action="toggle">Expand all</button>
+            </div>
+          </div>
+
+          <details>
+            <summary>How do you profile and troubleshoot slowness?</summary>
+            <div class="answer">Use JVM profilers, thread dumps, GC logs, and APM tools. Analyze slow database queries, thread contention, and high memory usage with Actuator metrics and built-in JVM diagnostics.</div>
+          </details>
+
+          <details>
+            <summary>How do you tune datasource connection pools?</summary>
+            <div class="answer">Set pool size, connection timeout, and validation queries. HikariCP is the default pool in Spring Boot and usually performs well when configured according to your database load.</div>
+          </details>
+
+          <details>
+            <summary>How do you optimize startup time?</summary>
+            <div class="answer">Reduce classpath scanning, avoid unnecessary auto-configurations, and use `spring.main.lazy-initialization=true` or Spring Boot native image support. Keep dependencies minimal and avoid heavy startup tasks.</div>
+          </details>
+
+          <details>
+            <summary>What are advanced hardening practices?</summary>
+            <div class="answer">Use readiness and liveness probes, secure configuration stores, limit endpoint exposure, implement authentication/authorization, and use circuit breakers to protect downstream services.</div>
+          </details>
+        </section>
+
+        <section class="card" data-section="deploy">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Deployment &amp; DevOps</h2>
+              <div class="section-meta">Packaging, Docker, CI/CD, and production deployment patterns.</div>
+            </div>
+            <div class="section-actions">
+              <button type="button" class="section-toggle" data-action="toggle">Expand all</button>
+            </div>
+          </div>
+
+          <details>
+            <summary>How do you build and run an executable JAR?</summary>
+            <div class="answer">Use `mvn package` or the Gradle bootJar task. The resulting fat JAR contains dependencies and can be run with `java -jar app.jar`.</div>
+          </details>
+
+          <details>
+            <summary>How do you Dockerize a Spring Boot application?</summary>
+            <div class="answer">Create a Dockerfile using a JRE base image, copy the built JAR, and run it with `java -jar`. Use multi-stage builds for smaller images and add healthchecks or non-root users.</div>
+          </details>
+
+          <details>
+            <summary>What CI/CD practices are common for Spring Boot?</summary>
+            <div class="answer">Automate builds, tests, and packaging. Use pipelines to promote artifacts through environments, perform smoke tests, and deploy immutable artifacts with blue/green or canary releases.</div>
+          </details>
+
+          <details>
+            <summary>What is a layered JAR?</summary>
+            <div class="answer">A layered JAR separates dependencies, resources, and application classes into layers. It speeds up container image builds and deployment by reusing unchanged layers.</div>
+          </details>
+        </section>
+
+        <section class="card" data-section="logging">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Logging &amp; Troubleshooting</h2>
+              <div class="section-meta">Logging setup, centralized error tracking, and operational diagnostics.</div>
+            </div>
+            <div class="section-actions">
+              <button type="button" class="section-toggle" data-action="toggle">Expand all</button>
+            </div>
+          </div>
+
+          <details>
+            <summary>How do you configure logging in Spring Boot?</summary>
+            <div class="answer">Spring Boot uses Logback by default and supports configuration through `application.properties` or `logback-spring.xml`. Adjust `logging.level.*`, appenders, and patterns as needed.</div>
+          </details>
+
+          <details>
+            <summary>How do you add MDC/correlation IDs to logs?</summary>
+            <div class="answer">Use MDC (Mapped Diagnostic Context) in filters to add a correlation ID to logs. Include the MDC value in the log pattern so every request can be traced through logs.</div>
+          </details>
+
+          <details>
+            <summary>How do you centralize logs?</summary>
+            <div class="answer">Forward logs to a centralized system like ELK, EFK, or Splunk. Use structured logging in JSON format to make log searching and analysis easier.</div>
+          </details>
+
+          <details>
+            <summary>How do you handle error reporting?</summary>
+            <div class="answer">Capture exceptions with global error handlers and send important errors to monitoring systems. Use application insights or Sentry to track issues and correlated log events.</div>
+          </details>
+        </section>
+
+        <section class="card" data-section="extras">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Common Interview Extras</h2>
+              <div class="section-meta">High-value topics, advanced patterns, and frequently asked tough questions.</div>
+            </div>
+            <div class="section-actions">
+              <button type="button" class="section-toggle" data-action="toggle">Expand all</button>
+            </div>
+          </div>
+
+          <details>
+            <summary>What is a correlation ID and how do you implement it?</summary>
+            <div class="answer">A correlation ID associates logs and requests across services. Generate it at the gateway or first entry point, propagate it in headers, and add it to log MDC for traceability.</div>
+          </details>
+
+          <details>
+            <summary>Explain circuit breakers and resilience patterns.</summary>
+            <div class="answer">Circuit breakers stop calls to failing services after a threshold is reached. Use retry, fallback, bulkhead, and timeouts with libraries like Resilience4j to build resilient applications.</div>
+          </details>
+
+          <details>
+            <summary>How do you version REST APIs?</summary>
+            <div class="answer">Version APIs using URL paths, headers, or content negotiation. Maintain backward compatibility, document changes clearly, and deprecate older versions gradually.</div>
+          </details>
+
+          <details>
+            <summary>What is eventual consistency?</summary>
+            <div class="answer">Eventual consistency means data updates propagate asynchronously and may not be immediately visible everywhere. Use event-driven workflows and compensating actions to keep distributed data eventually consistent.</div>
+          </details>
+
+          <details>
+            <summary>How do you implement graceful shutdown?</summary>
+            <div class="answer">Enable Spring Boot graceful shutdown with `server.shutdown=graceful` and configure timeouts. This allows in-flight requests to finish before the application stops.</div>
+          </details>
+        </section>
+      </div>
+
+      <div class="actions">
+        <button type="button" id="download" class="btn">Download HTML</button>
+      </div>
+    </div>
+
+    <script>
+      function toggleDetails(section, open) {
+        section.querySelectorAll('details').forEach(detail => {
+          detail.open = open;
+        });
+      }
+
+      document.querySelectorAll('.section-toggle').forEach(button => {
+        button.addEventListener('click', event => {
+          const section = event.target.closest('section');
+          const details = section.querySelectorAll('details');
+          const openAny = Array.from(details).some(detail => !detail.open);
+          toggleDetails(section, openAny);
+          event.target.textContent = openAny ? 'Collapse all' : 'Expand all';
+        });
+      });
+
+      document.getElementById('expand-all').addEventListener('click', () => {
+        document.querySelectorAll('section[data-section]').forEach(section => {
+          toggleDetails(section, true);
+          section.querySelector('.section-toggle').textContent = 'Collapse all';
+        });
+      });
+
+      document.getElementById('collapse-all').addEventListener('click', () => {
+        document.querySelectorAll('section[data-section]').forEach(section => {
+          toggleDetails(section, false);
+          section.querySelector('.section-toggle').textContent = 'Expand all';
+        });
+      });
+
+      document.getElementById('print').addEventListener('click', () => window.print());
+
+      document.getElementById('download').addEventListener('click', () => {
+        const blob = new Blob([document.documentElement.outerHTML], { type: 'text/html' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'springboot-interview-questions-2yrs.html';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+    </script>
+  </body>
+</html>
