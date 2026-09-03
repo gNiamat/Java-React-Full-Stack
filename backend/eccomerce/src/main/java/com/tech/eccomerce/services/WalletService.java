@@ -1,13 +1,16 @@
 package com.tech.eccomerce.services;
 
 import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.tech.eccomerce.dto.TransactionEvent;
 import com.tech.eccomerce.dto.TransactionRequest;
 import com.tech.eccomerce.dto.TransferRequest;
+import com.tech.eccomerce.dto.UserRegistrationEvent;
 import com.tech.eccomerce.dto.UserRegistrationRequest;
 import com.tech.eccomerce.dto.WalletResponse;
 import com.tech.eccomerce.entity.Transaction;
@@ -15,6 +18,7 @@ import com.tech.eccomerce.entity.User;
 import com.tech.eccomerce.entity.Wallet;
 import com.tech.eccomerce.exception.InsufficientFundsException;
 import com.tech.eccomerce.exception.ResourceNotFoundException;
+import com.tech.eccomerce.kafka.KafkaProducer;
 import com.tech.eccomerce.repository.TransactionRepository;
 import com.tech.eccomerce.repository.UserRepository;
 import com.tech.eccomerce.repository.WalletRepository;
@@ -25,12 +29,14 @@ public class WalletService {
     private final UserRepository userRepository;
     private final WalletRepository walletRepository;
     private final TransactionRepository transactionRepository;
+    private final KafkaProducer kafkaProducer;
 
     public WalletService(UserRepository userRepository, WalletRepository walletRepository,
-            TransactionRepository transactionRepository) {
+            TransactionRepository transactionRepository, KafkaProducer kafkaProducer) {
         this.userRepository = userRepository;
         this.walletRepository = walletRepository;
         this.transactionRepository = transactionRepository;
+        this.kafkaProducer = kafkaProducer;
     }
 
     @Transactional
@@ -45,6 +51,16 @@ public class WalletService {
 
         userRepository.save(user);
         walletRepository.save(wallet);
+
+        // Publish user registration event to Kafka
+        UserRegistrationEvent event = new UserRegistrationEvent(
+                user.getId(),
+                wallet.getId(),
+                user.getName(),
+                user.getEmail(),
+                user.getRegisteredAt()
+        );
+        kafkaProducer.sendUserRegistrationEvent(event);
 
         return new WalletResponse(wallet.getId(), user.getId(), wallet.getBalance());
     }
@@ -66,7 +82,22 @@ public class WalletService {
 
         Transaction transaction = new Transaction("DEPOSIT", request.getAmount(), null, wallet, "COMPLETED",
                 "Deposit to wallet");
-        transactionRepository.save(transaction);
+        Transaction savedTransaction = transactionRepository.save(transaction);
+
+        // Publish transaction event to Kafka
+        TransactionEvent event = new TransactionEvent(
+                savedTransaction.getId(),
+                savedTransaction.getType(),
+                savedTransaction.getAmount(),
+                null,
+                savedTransaction.getDestinationWallet().getId(),
+                null,
+                wallet.getUser().getId(),
+                savedTransaction.getStatus(),
+                savedTransaction.getDescription(),
+                savedTransaction.getCreatedAt()
+        );
+        kafkaProducer.sendTransactionEvent(event);
 
         return new WalletResponse(wallet.getId(), wallet.getUser().getId(), wallet.getBalance());
     }
@@ -85,7 +116,22 @@ public class WalletService {
 
         Transaction transaction = new Transaction("WITHDRAWAL", request.getAmount(), wallet, null, "COMPLETED",
                 "Withdrawal from wallet");
-        transactionRepository.save(transaction);
+        Transaction savedTransaction = transactionRepository.save(transaction);
+
+        // Publish transaction event to Kafka
+        TransactionEvent event = new TransactionEvent(
+                savedTransaction.getId(),
+                savedTransaction.getType(),
+                savedTransaction.getAmount(),
+                savedTransaction.getSourceWallet().getId(),
+                null,
+                wallet.getUser().getId(),
+                null,
+                savedTransaction.getStatus(),
+                savedTransaction.getDescription(),
+                savedTransaction.getCreatedAt()
+        );
+        kafkaProducer.sendTransactionEvent(event);
 
         return new WalletResponse(wallet.getId(), wallet.getUser().getId(), wallet.getBalance());
     }
@@ -114,7 +160,22 @@ public class WalletService {
 
         Transaction transaction = new Transaction("TRANSFER", request.getAmount(), sourceWallet, destinationWallet,
                 "COMPLETED", "Transfer between wallets");
-        transactionRepository.save(transaction);
+        Transaction savedTransaction = transactionRepository.save(transaction);
+
+        // Publish transaction event to Kafka
+        TransactionEvent event = new TransactionEvent(
+                savedTransaction.getId(),
+                savedTransaction.getType(),
+                savedTransaction.getAmount(),
+                savedTransaction.getSourceWallet().getId(),
+                savedTransaction.getDestinationWallet().getId(),
+                sourceWallet.getUser().getId(),
+                destinationWallet.getUser().getId(),
+                savedTransaction.getStatus(),
+                savedTransaction.getDescription(),
+                savedTransaction.getCreatedAt()
+        );
+        kafkaProducer.sendTransactionEvent(event);
 
         return new WalletResponse(sourceWallet.getId(), sourceWallet.getUser().getId(), sourceWallet.getBalance());
     }
