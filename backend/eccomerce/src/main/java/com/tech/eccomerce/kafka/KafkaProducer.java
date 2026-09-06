@@ -13,6 +13,8 @@ import org.springframework.stereotype.Service;
 import com.tech.eccomerce.dto.TransactionEvent;
 import com.tech.eccomerce.dto.UserRegistrationEvent;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+
 @Service
 public class KafkaProducer {
 
@@ -27,35 +29,37 @@ public class KafkaProducer {
     @Value("${kafka.topic.user-registration}")
     private String userRegistrationTopic;
 
+    @CircuitBreaker(name = "kafkaPublisher", fallbackMethod = "publishTransactionEventFallback")
     public void sendTransactionEvent(TransactionEvent event) {
-        try {
-            logger.info("Publishing transaction event: {}", event.getTransactionId());
-            Message<TransactionEvent> message = MessageBuilder
-                    .withPayload(event)
-                    .setHeader(KafkaHeaders.TOPIC, transactionTopic)
-                    .setHeader("kafka_messageKey", String.valueOf(event.getSourceWalletId()))
-                    .build();
-            kafkaTemplate.send(message);
-            logger.info("Transaction event published successfully: {}", event.getTransactionId());
-        } catch (Exception e) {
-            logger.error("Error publishing transaction event: {}", event.getTransactionId(), e);
-            throw new RuntimeException("Failed to publish transaction event", e);
-        }
+        logger.info("Publishing transaction event: {}", event.getTransactionId());
+        Message<TransactionEvent> message = MessageBuilder
+                .withPayload(event)
+                .setHeader(KafkaHeaders.TOPIC, transactionTopic)
+                .setHeader("kafka_messageKey", String.valueOf(event.getSourceWalletId()))
+                .build();
+        kafkaTemplate.send(message);
+        logger.info("Transaction event published successfully: {}", event.getTransactionId());
     }
 
+    @CircuitBreaker(name = "kafkaPublisher", fallbackMethod = "publishUserRegistrationEventFallback")
     public void sendUserRegistrationEvent(UserRegistrationEvent event) {
-        try {
-            logger.info("Publishing user registration event: {}", event.getUserId());
-            Message<UserRegistrationEvent> message = MessageBuilder
-                    .withPayload(event)
-                    .setHeader(KafkaHeaders.TOPIC, userRegistrationTopic)
-                    .setHeader("kafka_messageKey", String.valueOf(event.getUserId()))
-                    .build();
-            kafkaTemplate.send(message);
-            logger.info("User registration event published successfully: {}", event.getUserId());
-        } catch (Exception e) {
-            logger.error("Error publishing user registration event: {}", event.getUserId(), e);
-            throw new RuntimeException("Failed to publish user registration event", e);
-        }
+        logger.info("Publishing user registration event: {}", event.getUserId());
+        Message<UserRegistrationEvent> message = MessageBuilder
+                .withPayload(event)
+                .setHeader(KafkaHeaders.TOPIC, userRegistrationTopic)
+                .setHeader("kafka_messageKey", String.valueOf(event.getUserId()))
+                .build();
+        kafkaTemplate.send(message);
+        logger.info("User registration event published successfully: {}", event.getUserId());
+    }
+
+    public void publishTransactionEventFallback(TransactionEvent event, Exception e) {
+        logger.warn("Circuit breaker triggered for transaction event {}. Kafka is unavailable. Event dropped. Reason: {}",
+                event.getTransactionId(), e.getMessage());
+    }
+
+    public void publishUserRegistrationEventFallback(UserRegistrationEvent event, Exception e) {
+        logger.warn("Circuit breaker triggered for user registration event {}. Kafka is unavailable. Event dropped. Reason: {}",
+                event.getUserId(), e.getMessage());
     }
 }
