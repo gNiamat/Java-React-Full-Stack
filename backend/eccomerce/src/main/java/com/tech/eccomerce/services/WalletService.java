@@ -1,9 +1,7 @@
 package com.tech.eccomerce.services;
 
-import java.math.BigDecimal;
-import java.time.Instant;
-import java.util.Optional;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,6 +24,8 @@ import com.tech.eccomerce.repository.WalletRepository;
 @Service
 public class WalletService {
 
+    private static final Logger log = LoggerFactory.getLogger(WalletService.class);
+
     private final UserRepository userRepository;
     private final WalletRepository walletRepository;
     private final TransactionRepository transactionRepository;
@@ -41,7 +41,9 @@ public class WalletService {
 
     @Transactional
     public WalletResponse registerUser(UserRegistrationRequest request) {
+        log.info("Creating wallet for user email: {}", request.getEmail());
         userRepository.findByEmail(request.getEmail()).ifPresent(user -> {
+            log.warn("Registration rejected because email already exists: {}", request.getEmail());
             throw new IllegalArgumentException("Email already registered: " + request.getEmail());
         });
 
@@ -62,18 +64,22 @@ public class WalletService {
         );
         kafkaProducer.sendUserRegistrationEvent(event);
 
+        log.info("Wallet created successfully for userId: {} walletId: {}", user.getId(), wallet.getId());
         return new WalletResponse(wallet.getId(), user.getId(), wallet.getBalance());
     }
 
     @Transactional(readOnly = true)
     public WalletResponse getBalance(Long walletId) {
+        log.info("Fetching wallet balance for walletId: {}", walletId);
         Wallet wallet = walletRepository.findById(walletId)
                 .orElseThrow(() -> new ResourceNotFoundException("Wallet not found: " + walletId));
+        log.debug("Balance found for walletId: {} amount: {}", walletId, wallet.getBalance());
         return new WalletResponse(wallet.getId(), wallet.getUser().getId(), wallet.getBalance());
     }
 
     @Transactional
     public WalletResponse deposit(TransactionRequest request) {
+        log.info("Processing deposit for walletId: {} amount: {}", request.getWalletId(), request.getAmount());
         Wallet wallet = walletRepository.findById(request.getWalletId())
                 .orElseThrow(() -> new ResourceNotFoundException("Wallet not found: " + request.getWalletId()));
 
@@ -104,10 +110,12 @@ public class WalletService {
 
     @Transactional
     public WalletResponse withdraw(TransactionRequest request) {
+        log.info("Processing withdrawal for walletId: {} amount: {}", request.getWalletId(), request.getAmount());
         Wallet wallet = walletRepository.findById(request.getWalletId())
                 .orElseThrow(() -> new ResourceNotFoundException("Wallet not found: " + request.getWalletId()));
 
         if (wallet.getBalance().compareTo(request.getAmount()) < 0) {
+            log.warn("Withdrawal denied due to insufficient funds for walletId: {} amount: {}", request.getWalletId(), request.getAmount());
             throw new InsufficientFundsException("Insufficient balance for withdrawal");
         }
 
@@ -138,7 +146,10 @@ public class WalletService {
 
     @Transactional
     public WalletResponse transfer(TransferRequest request) {
+        log.info("Processing transfer from walletId: {} to walletId: {} amount: {}",
+                request.getSourceWalletId(), request.getDestinationWalletId(), request.getAmount());
         if (request.getSourceWalletId().equals(request.getDestinationWalletId())) {
+            log.warn("Transfer rejected because source and destination wallets are the same: {}", request.getSourceWalletId());
             throw new IllegalArgumentException("Source and destination wallets must differ");
         }
 
@@ -149,6 +160,8 @@ public class WalletService {
                         () -> new ResourceNotFoundException("Destination wallet not found: " + request.getDestinationWalletId()));
 
         if (sourceWallet.getBalance().compareTo(request.getAmount()) < 0) {
+            log.warn("Transfer denied due to insufficient funds from walletId: {} amount: {}",
+                    request.getSourceWalletId(), request.getAmount());
             throw new InsufficientFundsException("Insufficient balance for transfer");
         }
 
@@ -177,6 +190,8 @@ public class WalletService {
         );
         kafkaProducer.sendTransactionEvent(event);
 
+        log.info("Transfer completed from walletId: {} to walletId: {} final balance: {}",
+                sourceWallet.getId(), destinationWallet.getId(), sourceWallet.getBalance());
         return new WalletResponse(sourceWallet.getId(), sourceWallet.getUser().getId(), sourceWallet.getBalance());
     }
 }
