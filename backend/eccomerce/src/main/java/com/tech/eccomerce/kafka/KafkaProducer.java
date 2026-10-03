@@ -14,6 +14,7 @@ import com.tech.eccomerce.dto.TransactionEvent;
 import com.tech.eccomerce.dto.UserRegistrationEvent;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.retry.annotation.Retry;
 
 @Service
 public class KafkaProducer {
@@ -29,6 +30,7 @@ public class KafkaProducer {
     @Value("${kafka.topic.user-registration}")
     private String userRegistrationTopic;
 
+    @Retry(name = "kafkaPublisher", fallbackMethod = "publishTransactionEventFallback")
     @CircuitBreaker(name = "kafkaPublisher", fallbackMethod = "publishTransactionEventFallback")
     public void sendTransactionEvent(TransactionEvent event) {
         logger.info("Publishing transaction event: {}", event.getTransactionId());
@@ -41,6 +43,7 @@ public class KafkaProducer {
         logger.info("Transaction event published successfully: {}", event.getTransactionId());
     }
 
+    @Retry(name = "kafkaPublisher", fallbackMethod = "publishUserRegistrationEventFallback")
     @CircuitBreaker(name = "kafkaPublisher", fallbackMethod = "publishUserRegistrationEventFallback")
     public void sendUserRegistrationEvent(UserRegistrationEvent event) {
         logger.info("Publishing user registration event: {}", event.getUserId());
