@@ -1,0 +1,1035 @@
+2026-10-03T22:54:38.225+05:30  INFO 33776 --- [eccomerce] [main] c.t.eccomerce.EccomerceApplicationTests  : Starting EccomerceApplicationTests using Java 21.0.9 with PID 33776 (started by ghous in C:\Users\ghous\OneDrive\Documents\Java-React-Full-Stack\backend\eccomerce)
+2026-10-03T22:54:38.227+05:30 DEBUG 33776 --- [eccomerce] [main] c.t.eccomerce.EccomerceApplicationTests  : Running with Spring Boot v3.5.7, Spring v6.2.12
+2026-10-03T22:54:38.228+05:30  INFO 33776 --- [eccomerce] [main] c.t.eccomerce.EccomerceApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2026-10-03T22:54:40.111+05:30  INFO 33776 --- [eccomerce] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-03T22:54:40.289+05:30  INFO 33776 --- [eccomerce] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 141 ms. Found 3 JPA repository interfaces.
+2026-10-03T22:54:42.751+05:30  INFO 33776 --- [eccomerce] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-03T22:54:43.001+05:30  INFO 33776 --- [eccomerce] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2026-10-03T22:54:43.089+05:30  INFO 33776 --- [eccomerce] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-10-03T22:54:43.699+05:30  INFO 33776 --- [eccomerce] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-03T22:54:43.767+05:30  INFO 33776 --- [eccomerce] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-03T22:54:44.801+05:30  INFO 33776 --- [eccomerce] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3a7d914c
+2026-10-03T22:54:44.805+05:30  INFO 33776 --- [eccomerce] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-03T22:54:45.004+05:30  WARN 33776 --- [eccomerce] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-10-03T22:54:45.006+05:30  WARN 33776 --- [eccomerce] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2026-10-03T22:54:45.053+05:30  INFO 33776 --- [eccomerce] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-03T22:54:46.986+05:30  INFO 33776 --- [eccomerce] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-03T22:54:47.267+05:30  INFO 33776 --- [eccomerce] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-03T22:54:49.760+05:30  WARN 33776 --- [eccomerce] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-03T22:54:51.712+05:30  INFO 33776 --- [eccomerce] [main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = eccomerce-admin-0
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2026-10-03T22:54:52.053+05:30  INFO 33776 --- [eccomerce] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.1
+2026-10-03T22:54:52.054+05:30  INFO 33776 --- [eccomerce] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f745dfdcee2b9851
+2026-10-03T22:54:52.054+05:30  INFO 33776 --- [eccomerce] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1791048292051
+2026-10-03T22:54:52.085+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:54:52.087+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:54:52.198+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:54:52.199+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:54:52.301+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:54:52.301+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:54:52.516+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:54:52.517+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:54:52.939+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:54:52.940+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:54:53.895+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:54:53.897+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:54:54.848+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:54:54.848+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:54:55.903+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:54:55.903+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:54:56.965+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:54:56.965+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:54:58.030+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:54:58.031+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:54:59.092+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:54:59.093+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:00.051+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:00.052+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:01.117+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:01.118+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:02.207+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:02.208+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:03.273+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:03.274+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:04.338+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:04.339+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:05.400+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:05.400+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:06.249+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:06.250+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:07.314+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:07.315+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:08.181+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:08.183+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:09.050+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:09.051+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:10.113+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:10.114+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:11.071+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:11.072+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:12.134+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:12.134+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:13.195+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:13.197+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:14.256+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:14.256+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:15.320+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:15.321+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:16.385+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:16.385+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:17.451+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:17.452+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:18.304+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:18.305+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:19.265+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:19.265+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:20.220+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:20.220+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:21.068+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:21.068+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:22.066+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] o.a.k.c.a.i.AdminMetadataManager         : [AdminClient clientId=eccomerce-admin-0] Metadata update failed
+
+org.apache.kafka.common.errors.TimeoutException: Timed out waiting for a node assignment. Call: fetchMetadata
+
+2026-10-03T22:55:22.066+05:30 ERROR 33776 --- [eccomerce] [main] o.springframework.kafka.core.KafkaAdmin  : Could not configure topics
+
+java.util.concurrent.TimeoutException: null
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095) ~[na:na]
+	at org.apache.kafka.common.internals.KafkaFutureImpl.get(KafkaFutureImpl.java:183) ~[kafka-clients-3.9.1.jar:na]
+	at org.springframework.kafka.core.KafkaAdmin.updateClusterId(KafkaAdmin.java:305) ~[spring-kafka-3.3.10.jar:3.3.10]
+	at org.springframework.kafka.core.KafkaAdmin.initialize(KafkaAdmin.java:276) ~[spring-kafka-3.3.10.jar:3.3.10]
+	at org.springframework.kafka.core.KafkaAdmin.afterSingletonsInstantiated(KafkaAdmin.java:246) ~[spring-kafka-3.3.10.jar:3.3.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1156) ~[spring-beans-6.2.12.jar:6.2.12]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:990) ~[spring-context-6.2.12.jar:6.2.12]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.12.jar:6.2.12]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:144) ~[spring-boot-test-3.5.7.jar:3.5.7]
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58) ~[spring-core-6.2.12.jar:6.2.12]
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46) ~[spring-core-6.2.12.jar:6.2.12]
+	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1461) ~[spring-boot-3.5.7.jar:3.5.7]
+	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:563) ~[spring-boot-test-3.5.7.jar:3.5.7]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:144) ~[spring-boot-test-3.5.7.jar:3.5.7]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:110) ~[spring-boot-test-3.5.7.jar:3.5.7]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225) ~[spring-test-6.2.12.jar:6.2.12]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152) ~[spring-test-6.2.12.jar:6.2.12]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130) ~[spring-test-6.2.12.jar:6.2.12]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:200) ~[spring-test-6.2.12.jar:6.2.12]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:139) ~[spring-test-6.2.12.jar:6.2.12]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260) ~[spring-test-6.2.12.jar:6.2.12]
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:159) ~[spring-test-6.2.12.jar:6.2.12]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:383) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:388) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:382) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151) ~[na:na]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596) ~[na:na]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:382) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:293) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:292) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:281) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at java.base/java.util.Optional.orElseGet(Optional.java:364) ~[na:na]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:280) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:27) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:112) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:111) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69) ~[junit-jupiter-engine-5.12.2.jar:5.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:128) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:128) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.12.2.jar:1.12.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:201) ~[junit-platform-launcher-1.12.2.jar:1.12.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:170) ~[junit-platform-launcher-1.12.2.jar:1.12.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:94) ~[junit-platform-launcher-1.12.2.jar:1.12.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:59) ~[junit-platform-launcher-1.12.2.jar:1.12.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:142) ~[junit-platform-launcher-1.12.2.jar:1.12.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.12.2.jar:1.12.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) ~[junit-platform-launcher-1.12.2.jar:1.12.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85) ~[junit-platform-launcher-1.12.2.jar:1.12.2]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47) ~[junit-platform-launcher-1.12.2.jar:1.12.2]
+	at org.junit.platform.launcher.core.InterceptingLauncher.lambda$execute$1(InterceptingLauncher.java:39) ~[junit-platform-launcher-1.12.2.jar:1.12.2]
+	at org.junit.platform.launcher.core.ClasspathAlignmentCheckingLauncherInterceptor.intercept(ClasspathAlignmentCheckingLauncherInterceptor.java:25) ~[junit-platform-launcher-1.12.2.jar:1.12.2]
+	at org.junit.platform.launcher.core.InterceptingLauncher.execute(InterceptingLauncher.java:38) ~[junit-platform-launcher-1.12.2.jar:1.12.2]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47) ~[junit-platform-launcher-1.12.2.jar:1.12.2]
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.executeWithoutCancellationToken(LauncherAdapter.java:60) ~[surefire-junit-platform-3.5.4.jar:3.5.4]
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.execute(LauncherAdapter.java:52) ~[surefire-junit-platform-3.5.4.jar:3.5.4]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:203) ~[surefire-junit-platform-3.5.4.jar:3.5.4]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:168) ~[surefire-junit-platform-3.5.4.jar:3.5.4]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:136) ~[surefire-junit-platform-3.5.4.jar:3.5.4]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) ~[surefire-booter-3.5.4.jar:3.5.4]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) ~[surefire-booter-3.5.4.jar:3.5.4]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) ~[surefire-booter-3.5.4.jar:3.5.4]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) ~[surefire-booter-3.5.4.jar:3.5.4]
+
+2026-10-03T22:55:22.082+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:22.083+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:23.047+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:23.048+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:23.899+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:23.900+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:24.957+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:24.958+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:25.804+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:25.805+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:26.657+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:26.657+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:27.505+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:27.506+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:28.586+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:28.586+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:29.442+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:29.446+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:30.437+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:30.439+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:31.513+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Node -1 disconnected.
+2026-10-03T22:55:31.515+05:30  WARN 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=eccomerce-admin-0] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:32.089+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] o.a.k.clients.admin.KafkaAdminClient     : [AdminClient clientId=eccomerce-admin-0] Forcing a hard I/O thread shutdown. Requests in progress will be aborted.
+2026-10-03T22:55:32.091+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for eccomerce-admin-0 unregistered
+2026-10-03T22:55:32.092+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] o.a.k.c.a.i.AdminMetadataManager         : [AdminClient clientId=eccomerce-admin-0] Metadata update failed
+
+org.apache.kafka.common.errors.TimeoutException: The AdminClient thread has exited. Call: fetchMetadata
+
+2026-10-03T22:55:32.092+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] o.a.k.clients.admin.KafkaAdminClient     : [AdminClient clientId=eccomerce-admin-0] Timed out 2 remaining operation(s) during close.
+2026-10-03T22:55:32.098+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-10-03T22:55:32.098+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-10-03T22:55:32.099+05:30  INFO 33776 --- [eccomerce] [kafka-admin-client-thread | eccomerce-admin-0] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-10-03T22:55:32.226+05:30  INFO 33776 --- [eccomerce] [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-eccomerce-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = eccomerce-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2026-10-03T22:55:32.289+05:30  INFO 33776 --- [eccomerce] [main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-10-03T22:55:32.407+05:30  INFO 33776 --- [eccomerce] [main] o.a.k.clients.consumer.ConsumerConfig    : These configurations '[spring.json.trusted.packages, spring.json.use.type.headers]' were supplied but are not used yet.
+2026-10-03T22:55:32.408+05:30  INFO 33776 --- [eccomerce] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.1
+2026-10-03T22:55:32.408+05:30  INFO 33776 --- [eccomerce] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f745dfdcee2b9851
+2026-10-03T22:55:32.408+05:30  INFO 33776 --- [eccomerce] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1791048332407
+2026-10-03T22:55:32.413+05:30  INFO 33776 --- [eccomerce] [main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-eccomerce-group-1, groupId=eccomerce-group] Subscribed to topic(s): wallet-transaction-events
+2026-10-03T22:55:32.435+05:30  INFO 33776 --- [eccomerce] [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-eccomerce-group-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = eccomerce-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2026-10-03T22:55:32.436+05:30  INFO 33776 --- [eccomerce] [main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-10-03T22:55:32.447+05:30  INFO 33776 --- [eccomerce] [main] o.a.k.clients.consumer.ConsumerConfig    : These configurations '[spring.json.trusted.packages, spring.json.use.type.headers]' were supplied but are not used yet.
+2026-10-03T22:55:32.448+05:30  INFO 33776 --- [eccomerce] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.1
+2026-10-03T22:55:32.448+05:30  INFO 33776 --- [eccomerce] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f745dfdcee2b9851
+2026-10-03T22:55:32.448+05:30  INFO 33776 --- [eccomerce] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1791048332448
+2026-10-03T22:55:32.449+05:30  INFO 33776 --- [eccomerce] [main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-eccomerce-group-2, groupId=eccomerce-group] Subscribed to topic(s): wallet-transaction-events
+2026-10-03T22:55:32.453+05:30  INFO 33776 --- [eccomerce] [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-eccomerce-group-3
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = eccomerce-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2026-10-03T22:55:32.454+05:30  INFO 33776 --- [eccomerce] [main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-10-03T22:55:32.468+05:30  INFO 33776 --- [eccomerce] [main] o.a.k.clients.consumer.ConsumerConfig    : These configurations '[spring.json.trusted.packages, spring.json.use.type.headers]' were supplied but are not used yet.
+2026-10-03T22:55:32.469+05:30  INFO 33776 --- [eccomerce] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.1
+2026-10-03T22:55:32.469+05:30  INFO 33776 --- [eccomerce] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f745dfdcee2b9851
+2026-10-03T22:55:32.470+05:30  INFO 33776 --- [eccomerce] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1791048332469
+2026-10-03T22:55:32.470+05:30  INFO 33776 --- [eccomerce] [main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-eccomerce-group-3, groupId=eccomerce-group] Subscribed to topic(s): wallet-transaction-events
+2026-10-03T22:55:32.482+05:30  INFO 33776 --- [eccomerce] [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-eccomerce-group-4
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = eccomerce-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2026-10-03T22:55:32.483+05:30  INFO 33776 --- [eccomerce] [main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-10-03T22:55:32.497+05:30  INFO 33776 --- [eccomerce] [main] o.a.k.clients.consumer.ConsumerConfig    : These configurations '[spring.json.trusted.packages, spring.json.use.type.headers]' were supplied but are not used yet.
+2026-10-03T22:55:32.498+05:30  INFO 33776 --- [eccomerce] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.1
+2026-10-03T22:55:32.498+05:30  INFO 33776 --- [eccomerce] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f745dfdcee2b9851
+2026-10-03T22:55:32.498+05:30  INFO 33776 --- [eccomerce] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1791048332498
+2026-10-03T22:55:32.499+05:30  INFO 33776 --- [eccomerce] [main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-eccomerce-group-4, groupId=eccomerce-group] Subscribed to topic(s): user-registration-events
+2026-10-03T22:55:32.502+05:30  INFO 33776 --- [eccomerce] [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-eccomerce-group-5
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = eccomerce-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2026-10-03T22:55:32.503+05:30  INFO 33776 --- [eccomerce] [main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-10-03T22:55:32.508+05:30  INFO 33776 --- [eccomerce] [main] o.a.k.clients.consumer.ConsumerConfig    : These configurations '[spring.json.trusted.packages, spring.json.use.type.headers]' were supplied but are not used yet.
+2026-10-03T22:55:32.509+05:30  INFO 33776 --- [eccomerce] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.1
+2026-10-03T22:55:32.509+05:30  INFO 33776 --- [eccomerce] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f745dfdcee2b9851
+2026-10-03T22:55:32.509+05:30  INFO 33776 --- [eccomerce] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1791048332509
+2026-10-03T22:55:32.509+05:30  INFO 33776 --- [eccomerce] [main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-eccomerce-group-5, groupId=eccomerce-group] Subscribed to topic(s): user-registration-events
+2026-10-03T22:55:32.513+05:30  INFO 33776 --- [eccomerce] [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-eccomerce-group-6
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = eccomerce-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2026-10-03T22:55:32.514+05:30  INFO 33776 --- [eccomerce] [main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-10-03T22:55:32.524+05:30  INFO 33776 --- [eccomerce] [main] o.a.k.clients.consumer.ConsumerConfig    : These configurations '[spring.json.trusted.packages, spring.json.use.type.headers]' were supplied but are not used yet.
+2026-10-03T22:55:32.524+05:30  INFO 33776 --- [eccomerce] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.1
+2026-10-03T22:55:32.524+05:30  INFO 33776 --- [eccomerce] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f745dfdcee2b9851
+2026-10-03T22:55:32.524+05:30  INFO 33776 --- [eccomerce] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1791048332524
+2026-10-03T22:55:32.525+05:30  INFO 33776 --- [eccomerce] [main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-eccomerce-group-6, groupId=eccomerce-group] Subscribed to topic(s): user-registration-events
+2026-10-03T22:55:32.544+05:30  INFO 33776 --- [eccomerce] [main] c.t.eccomerce.EccomerceApplicationTests  : Started EccomerceApplicationTests in 54.991 seconds (process running for 56.999)
+2026-10-03T22:55:33.140+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-eccomerce-group-1, groupId=eccomerce-group] Node -1 disconnected.
+2026-10-03T22:55:33.141+05:30  WARN 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-eccomerce-group-1, groupId=eccomerce-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:33.141+05:30  WARN 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-eccomerce-group-1, groupId=eccomerce-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+2026-10-03T22:55:33.140+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-eccomerce-group-5, groupId=eccomerce-group] Node -1 disconnected.
+2026-10-03T22:55:33.141+05:30  WARN 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-eccomerce-group-5, groupId=eccomerce-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:33.142+05:30  WARN 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-eccomerce-group-5, groupId=eccomerce-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+2026-10-03T22:55:33.143+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-eccomerce-group-2, groupId=eccomerce-group] Node -1 disconnected.
+2026-10-03T22:55:33.143+05:30  WARN 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-eccomerce-group-2, groupId=eccomerce-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:33.143+05:30  WARN 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-eccomerce-group-2, groupId=eccomerce-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+2026-10-03T22:55:33.144+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-eccomerce-group-4, groupId=eccomerce-group] Node -1 disconnected.
+2026-10-03T22:55:33.145+05:30  WARN 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-eccomerce-group-4, groupId=eccomerce-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:33.144+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-eccomerce-group-3, groupId=eccomerce-group] Node -1 disconnected.
+2026-10-03T22:55:33.145+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-eccomerce-group-6, groupId=eccomerce-group] Node -1 disconnected.
+2026-10-03T22:55:33.146+05:30  WARN 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-eccomerce-group-6, groupId=eccomerce-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:33.146+05:30  WARN 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-eccomerce-group-6, groupId=eccomerce-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+2026-10-03T22:55:33.145+05:30  WARN 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-eccomerce-group-4, groupId=eccomerce-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+2026-10-03T22:55:33.146+05:30  WARN 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-eccomerce-group-3, groupId=eccomerce-group] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Node may not be available.
+2026-10-03T22:55:33.146+05:30  WARN 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-eccomerce-group-3, groupId=eccomerce-group] Bootstrap broker localhost:9092 (id: -1 rack: null) disconnected
+2026-10-03T22:55:33.150+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-eccomerce-group-1, groupId=eccomerce-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-03T22:55:33.151+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-eccomerce-group-3, groupId=eccomerce-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-03T22:55:33.151+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-eccomerce-group-5, groupId=eccomerce-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-03T22:55:33.151+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-eccomerce-group-5, groupId=eccomerce-group] Request joining group due to: consumer pro-actively leaving the group
+2026-10-03T22:55:33.151+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-eccomerce-group-5, groupId=eccomerce-group] Unsubscribed all topics or patterns and assigned partitions
+2026-10-03T22:55:33.150+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-eccomerce-group-2, groupId=eccomerce-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-03T22:55:33.152+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-eccomerce-group-2, groupId=eccomerce-group] Request joining group due to: consumer pro-actively leaving the group
+2026-10-03T22:55:33.152+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-eccomerce-group-2, groupId=eccomerce-group] Unsubscribed all topics or patterns and assigned partitions
+2026-10-03T22:55:33.150+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-eccomerce-group-6, groupId=eccomerce-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-03T22:55:33.153+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-eccomerce-group-6, groupId=eccomerce-group] Request joining group due to: consumer pro-actively leaving the group
+2026-10-03T22:55:33.153+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-eccomerce-group-6, groupId=eccomerce-group] Unsubscribed all topics or patterns and assigned partitions
+2026-10-03T22:55:33.154+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-eccomerce-group-5, groupId=eccomerce-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-03T22:55:33.154+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-eccomerce-group-6, groupId=eccomerce-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-03T22:55:33.154+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-eccomerce-group-5, groupId=eccomerce-group] Request joining group due to: consumer pro-actively leaving the group
+2026-10-03T22:55:33.155+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-eccomerce-group-6, groupId=eccomerce-group] Request joining group due to: consumer pro-actively leaving the group
+2026-10-03T22:55:33.151+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-eccomerce-group-4, groupId=eccomerce-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-03T22:55:33.151+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-eccomerce-group-1, groupId=eccomerce-group] Request joining group due to: consumer pro-actively leaving the group
+2026-10-03T22:55:33.155+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-eccomerce-group-4, groupId=eccomerce-group] Request joining group due to: consumer pro-actively leaving the group
+2026-10-03T22:55:33.151+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-eccomerce-group-3, groupId=eccomerce-group] Request joining group due to: consumer pro-actively leaving the group
+2026-10-03T22:55:33.155+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-eccomerce-group-1, groupId=eccomerce-group] Unsubscribed all topics or patterns and assigned partitions
+2026-10-03T22:55:33.156+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-eccomerce-group-3, groupId=eccomerce-group] Unsubscribed all topics or patterns and assigned partitions
+2026-10-03T22:55:33.155+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-eccomerce-group-2, groupId=eccomerce-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-03T22:55:33.156+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-eccomerce-group-1, groupId=eccomerce-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-03T22:55:33.156+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-eccomerce-group-4, groupId=eccomerce-group] Unsubscribed all topics or patterns and assigned partitions
+2026-10-03T22:55:33.156+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-eccomerce-group-3, groupId=eccomerce-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-03T22:55:33.156+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-eccomerce-group-2, groupId=eccomerce-group] Request joining group due to: consumer pro-actively leaving the group
+2026-10-03T22:55:33.156+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-eccomerce-group-3, groupId=eccomerce-group] Request joining group due to: consumer pro-actively leaving the group
+2026-10-03T22:55:33.156+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-eccomerce-group-4, groupId=eccomerce-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-03T22:55:33.156+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-eccomerce-group-1, groupId=eccomerce-group] Request joining group due to: consumer pro-actively leaving the group
+2026-10-03T22:55:33.156+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-eccomerce-group-4, groupId=eccomerce-group] Request joining group due to: consumer pro-actively leaving the group
+2026-10-03T22:55:33.174+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-10-03T22:55:33.175+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-10-03T22:55:33.174+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-10-03T22:55:33.175+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-10-03T22:55:33.175+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-10-03T22:55:33.175+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-10-03T22:55:33.175+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-10-03T22:55:33.176+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-10-03T22:55:33.176+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-10-03T22:55:33.176+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-10-03T22:55:33.176+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-10-03T22:55:33.176+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-10-03T22:55:33.175+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-10-03T22:55:33.176+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-10-03T22:55:33.177+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-10-03T22:55:33.175+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-10-03T22:55:33.177+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-10-03T22:55:33.177+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-10-03T22:55:33.175+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-10-03T22:55:33.179+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-10-03T22:55:33.180+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-10-03T22:55:33.179+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-10-03T22:55:33.181+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-10-03T22:55:33.181+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-10-03T22:55:33.191+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-eccomerce-group-3 unregistered
+2026-10-03T22:55:33.192+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] o.s.k.l.KafkaMessageListenerContainer    : eccomerce-group: Consumer stopped
+2026-10-03T22:55:33.195+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-eccomerce-group-4 unregistered
+2026-10-03T22:55:33.195+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : eccomerce-group: Consumer stopped
+2026-10-03T22:55:33.195+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-eccomerce-group-6 unregistered
+2026-10-03T22:55:33.195+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-2-C-1] o.s.k.l.KafkaMessageListenerContainer    : eccomerce-group: Consumer stopped
+2026-10-03T22:55:33.196+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-eccomerce-group-2 unregistered
+2026-10-03T22:55:33.196+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] o.s.k.l.KafkaMessageListenerContainer    : eccomerce-group: Consumer stopped
+2026-10-03T22:55:33.198+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-eccomerce-group-1 unregistered
+2026-10-03T22:55:33.199+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : eccomerce-group: Consumer stopped
+2026-10-03T22:55:33.199+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-eccomerce-group-5 unregistered
+2026-10-03T22:55:33.199+05:30  INFO 33776 --- [eccomerce] [org.springframework.kafka.KafkaListenerEndpointContainer#1-1-C-1] o.s.k.l.KafkaMessageListenerContainer    : eccomerce-group: Consumer stopped
+2026-10-03T22:55:33.207+05:30  INFO 33776 --- [eccomerce] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-03T22:55:33.215+05:30  INFO 33776 --- [eccomerce] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-10-03T22:55:33.231+05:30  INFO 33776 --- [eccomerce] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
