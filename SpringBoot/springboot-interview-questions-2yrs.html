@@ -177,7 +177,7 @@
 
           <details>
             <summary>What is Spring Boot and why is it used?</summary>
-            <div class="answer">Spring Boot streamlines Spring application development by offering convention-over-configuration, embedded servers, and production-ready behavior. It reduces boilerplate and lets developers focus on implementing features instead of wiring dependencies.</div>
+            <div class="answer">Spring Boot is a Java-based framework that simplifies building production-ready applications by eliminating complex configuration. It’s widely used because it provides embedded servers, auto-configuration, and streamlined dependency management, making development faster and easier.</div>
           </details>
 
           <details>
@@ -187,7 +187,7 @@
 
           <details>
             <summary>How does auto-configuration work in Spring Boot?</summary>
-            <div class="answer">Spring Boot scans the classpath and uses `@Conditional` annotations to activate configuration only when certain libraries are present and beans are missing. This makes it possible to get default beans without explicit configuration.</div>
+            <div class="answer">Spring Boot’s auto-configuration is the mechanism that automatically sets up beans and configurations based on what’s present on your classpath, your defined beans, and your application properties. It works by scanning available libraries and applying sensible defaults, while still allowing you to override them.Spring Boot scans the classpath and uses `@Conditional` annotations to activate configuration only when certain libraries are present and beans are missing. This makes it possible to get default beans without explicit configuration.</div>
           </details>
 
           <details>
@@ -224,7 +224,7 @@
 
           <details>
             <summary>How do you externalize configuration?</summary>
-            <div class="answer">Externalize configuration through `application.properties`, YAML, environment variables, command-line arguments, or Spring Cloud Config. Spring Boot merges these sources and follows a consistent order when resolving values.</div>
+            <div class="answer">Externalize configuration through `application.properties`, YAML, environment variables, command-line arguments, or Spring Cloud Config. Spring Boot merges these sources and follows a consistent order when resolving values.In Spring Boot, externalizing configuration means keeping values (like database URLs, API keys, or feature flags) outside of your compiled code so they can be changed without redeploying.</div>
           </details>
 
           <details>
@@ -234,7 +234,7 @@
 
           <details>
             <summary>How do you bind properties to a POJO?</summary>
-            <div class="answer">Use `@ConfigurationProperties(prefix = "app")` and either `@EnableConfigurationProperties` in a configuration class or register the class as a component. Use `@ConstructorBinding` for immutable binding.</div>
+            <div class="answer">A POJO is a Plain Old Java Object — a simple Java class not tied to any framework. It usually contains fields, constructors, and getters/setters, and is widely used to represent data in frameworks like Spring and Hibernate(Better than @Value).Use `@ConfigurationProperties(prefix = "app")` and either `@EnableConfigurationProperties` in a configuration class or register the class as a component. Use `@ConstructorBinding` for immutable binding.</div>
           </details>
 
           <details>
@@ -244,12 +244,12 @@
 
           <details>
             <summary>What is `spring.config.import`?</summary>
-            <div class="answer">`spring.config.import` lets you load configuration from imported sources such as files, optional locations, or remote config servers. It supports use cases like shared config and environment-specific overrides.</div>
+            <div class="answer">`spring.config.import` lets you load configuration from imported sources such as files, optional locations, or remote config servers. It supports use cases like shared config and environment-specific overrides.spring.config.import is a Spring Boot 2.4+ feature that lets you import additional configuration files or sources into your application.</div>
           </details>
 
           <details>
             <summary>How is property resolution ordered?</summary>
-            <div class="answer">Spring Boot resolves properties in a predefined order: command-line args, environment variables, application properties/YAML, profile-specific files, and defaults. Later sources override earlier ones.</div>
+            <div class="answer">Spring Boot resolves properties in a predefined order: command-line args, environment variables, application properties/YAML, profile-specific files, and defaults. Later sources override earlier ones.Spring Boot resolves properties in a well‑defined order of precedence. This means if the same property is defined in multiple places, the one higher in the order wins.</div>
           </details>
         </section>
 
@@ -266,7 +266,7 @@
 
           <details>
             <summary>What are `@Component`, `@Service`, and `@Repository`?</summary>
-            <div class="answer">All mark classes as Spring-managed beans. `@Service` indicates service-layer logic, `@Repository` indicates data access and enables exception translation, and `@Component` is a generic stereotype for any bean.</div>
+            <div class="answer">All are stereotypes used to mark classes as Spring-managed beans, but each carries a slightly different semantic meaning. `@Service` indicates service-layer logic, `@Repository` indicates data access and enables exception translation, and `@Component` is a generic stereotype for any bean.</div>
           </details>
 
           <details>
@@ -281,12 +281,12 @@
 
           <details>
             <summary>How do qualifiers and `@Primary` work?</summary>
-            <div class="answer">Use `@Qualifier("name")` to disambiguate multiple beans of the same type. `@Primary` marks one bean as the default when no explicit qualifier is provided.</div>
+            <div class="answer">in copilot good see.Use `@Qualifier("name")` to disambiguate multiple beans of the same type. `@Primary` marks one bean as the default when no explicit qualifier is provided.</div>
           </details>
 
           <details>
             <summary>What bean scopes are available?</summary>
-            <div class="answer">Common scopes are `singleton` (default), `prototype`, `request`, `session`, and `application`. In web apps, request and session scopes are useful, but they often require proxying with `@Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)`.</div>
+            <div class="answer">In Spring, bean scopes define the lifecycle and visibility of a bean within the application context. By default, beans are singleton, but Spring provides several scopes to suit different needs.Common scopes are `singleton` (default), `prototype`, `request`, `session`, and `application`. In web apps, request and session scopes are useful, but they often require proxying with `@Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)`.</div>
           </details>
         </section>
 
