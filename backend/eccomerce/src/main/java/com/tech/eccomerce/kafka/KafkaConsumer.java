@@ -16,7 +16,7 @@ public class KafkaConsumer {
     @KafkaListener(
             topics = "${kafka.topic.transaction}",
             groupId = "${spring.kafka.consumer.group-id}",
-            containerFactory = "kafkaListenerContainerFactory"
+            containerFactory = "transactionKafkaListenerContainerFactory"
     )
     public void consumeTransactionEvent(TransactionEvent event) {
         try {
@@ -36,7 +36,7 @@ public class KafkaConsumer {
     @KafkaListener(
             topics = "${kafka.topic.user-registration}",
             groupId = "${spring.kafka.consumer.group-id}",
-            containerFactory = "kafkaListenerContainerFactory"
+            containerFactory = "userRegistrationKafkaListenerContainerFactory"
     )
     public void consumeUserRegistrationEvent(UserRegistrationEvent event) {
         try {

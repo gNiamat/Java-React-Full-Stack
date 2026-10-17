@@ -2,12 +2,12 @@ package com.tech.eccomerce.config;
 
 import org.apache.kafka.clients.admin.AdminClientConfig;
 import org.apache.kafka.clients.admin.NewTopic;
+import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.annotation.EnableKafka;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
-import org.springframework.kafka.config.KafkaListenerContainerFactory;
 import org.springframework.kafka.config.TopicBuilder;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
@@ -15,8 +15,10 @@ import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaAdmin;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
-import org.springframework.kafka.listener.ConcurrentMessageListenerContainer;
 import org.springframework.kafka.support.serializer.JsonDeserializer;
+
+import com.tech.eccomerce.dto.TransactionEvent;
+import com.tech.eccomerce.dto.UserRegistrationEvent;
 
 @Configuration
 @EnableKafka
@@ -30,6 +32,9 @@ public class KafkaConfig {
 
     @Value("${kafka.topic.user-registration}")
     private String userRegistrationTopic;
+
+    @Value("${spring.kafka.consumer.group-id}")
+    private String consumerGroupId;
 
     @Bean
     public KafkaAdmin kafkaAdmin() {
@@ -70,24 +75,45 @@ public class KafkaConfig {
     }
 
     @Bean
-    public DefaultKafkaConsumerFactory<String, String> consumerFactory() {
-        java.util.Map<String, Object> props = new java.util.HashMap<>();
-        props.put(org.apache.kafka.clients.consumer.ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
-        props.put(org.apache.kafka.clients.consumer.ConsumerConfig.GROUP_ID_CONFIG, "eccomerce-group");
-        props.put(org.apache.kafka.clients.consumer.ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
-        props.put(org.apache.kafka.clients.consumer.ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);
-        props.put(JsonDeserializer.TRUSTED_PACKAGES, "*");
-        props.put(JsonDeserializer.USE_TYPE_INFO_HEADERS, false);
-        return new DefaultKafkaConsumerFactory<>(props, new StringDeserializer(), new JsonDeserializer<>(Object.class));
+    public DefaultKafkaConsumerFactory<String, TransactionEvent> transactionConsumerFactory() {
+        return consumerFactory(TransactionEvent.class);
     }
 
     @Bean
-    public KafkaListenerContainerFactory<ConcurrentMessageListenerContainer<String, String>> kafkaListenerContainerFactory(
-            DefaultKafkaConsumerFactory<String, String> consumerFactory) {
-        ConcurrentKafkaListenerContainerFactory<String, String> factory = new ConcurrentKafkaListenerContainerFactory<>();
+    public DefaultKafkaConsumerFactory<String, UserRegistrationEvent> userRegistrationConsumerFactory() {
+        return consumerFactory(UserRegistrationEvent.class);
+    }
+
+    private <T> DefaultKafkaConsumerFactory<String, T> consumerFactory(Class<T> eventType) {
+        java.util.Map<String, Object> props = new java.util.HashMap<>();
+        props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
+        props.put(ConsumerConfig.GROUP_ID_CONFIG, consumerGroupId);
+        props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+        props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);
+        props.put(JsonDeserializer.TRUSTED_PACKAGES, "*");
+        props.put(JsonDeserializer.USE_TYPE_INFO_HEADERS, false);
+        return new DefaultKafkaConsumerFactory<>(
+                props, new StringDeserializer(), new JsonDeserializer<>(eventType, false));
+    }
+
+    @Bean
+    public ConcurrentKafkaListenerContainerFactory<String, TransactionEvent> transactionKafkaListenerContainerFactory(
+            DefaultKafkaConsumerFactory<String, TransactionEvent> transactionConsumerFactory) {
+        return kafkaListenerContainerFactory(transactionConsumerFactory, 3);
+    }
+
+    @Bean
+    public ConcurrentKafkaListenerContainerFactory<String, UserRegistrationEvent> userRegistrationKafkaListenerContainerFactory(
+            DefaultKafkaConsumerFactory<String, UserRegistrationEvent> userRegistrationConsumerFactory) {
+        return kafkaListenerContainerFactory(userRegistrationConsumerFactory, 1);
+    }
+
+    private <T> ConcurrentKafkaListenerContainerFactory<String, T> kafkaListenerContainerFactory(
+            DefaultKafkaConsumerFactory<String, T> consumerFactory, int concurrency) {
+        ConcurrentKafkaListenerContainerFactory<String, T> factory = new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(consumerFactory);
         factory.setCommonErrorHandler(new org.springframework.kafka.listener.DefaultErrorHandler());
-        factory.setConcurrency(3);
+        factory.setConcurrency(concurrency);
         return factory;
     }
 }
